@@ -1,4 +1,6 @@
+import '../styles/globals.css'
 import { make as ResApp } from "src/App/_App.bs.js"
+
 
 // Note:
 // We need to wrap the make call with
