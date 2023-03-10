@@ -18,6 +18,10 @@
       "subdirs": true
     },
     {
+      "dir": "stories",
+      "subdirs": true
+    },
+    {
       "dir": "cypress",
       "subdirs": true
     }
