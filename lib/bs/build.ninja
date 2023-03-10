@@ -1,0 +1,47 @@
+rescript = 1
+g_finger := /Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/@rescript/react/lib/ocaml/install.stamp
+rule astj
+  command = /Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/rescript/darwin/bsc.exe  -bs-v 10.1.3 -bs-jsx 4 -bs-jsx-mode classic  -absname -bs-ast -o $out $i
+o bindings/Cypress/Cypress.ast : astj ../../bindings/Cypress/Cypress.res
+rule deps
+  command = /Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/rescript/darwin/bsb_helper.exe -hash 39f4904b0122083909078819cf529fb6 $in
+  restat = 1
+o bindings/Cypress/Cypress.d : deps bindings/Cypress/Cypress.ast
+rule mij
+  command = /Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/rescript/darwin/bsc.exe -I src/App -I src/Components/Navbar -I src/Components -I src/Layouts -I src/Pages/Home -I src/Pages -I src -I bindings/Next -I bindings/Storybook -I bindings/Cypress -I bindings -I /Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/@rescript/react/lib/ocaml   -bs-package-name rescript-nextjs-cypress-storybook-template -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o bindings/Cypress/Cypress.cmj bindings/Cypress/Cypress.cmi ../../bindings/Cypress/Cypress.bs.js : mij bindings/Cypress/Cypress.ast
+o bindings/Storybook/Storybook.ast : astj ../../bindings/Storybook/Storybook.res
+o bindings/Storybook/Storybook.d : deps bindings/Storybook/Storybook.ast
+o bindings/Storybook/Storybook.cmj bindings/Storybook/Storybook.cmi ../../bindings/Storybook/Storybook.bs.js : mij bindings/Storybook/Storybook.ast
+o bindings/Next/Next.ast : astj ../../bindings/Next/Next.res
+o bindings/Next/Next.d : deps bindings/Next/Next.ast
+o bindings/Next/Next.cmj bindings/Next/Next.cmi ../../bindings/Next/Next.bs.js : mij bindings/Next/Next.ast
+o src/Pages/Home/Home.ast : astj ../../src/Pages/Home/Home.res
+o src/Pages/Home/Home.d : deps src/Pages/Home/Home.ast
+o src/Pages/Home/Home.cmj src/Pages/Home/Home.cmi ../../src/Pages/Home/Home.bs.js : mij src/Pages/Home/Home.ast
+o src/Layouts/Default.ast : astj ../../src/Layouts/Default.res
+o src/Layouts/Default.d : deps src/Layouts/Default.ast
+o src/Layouts/Default.cmj src/Layouts/Default.cmi ../../src/Layouts/Default.bs.js : mij src/Layouts/Default.ast
+o src/Components/Navbar/Navber.ast : astj ../../src/Components/Navbar/Navber.res
+o src/Components/Navbar/Navber.d : deps src/Components/Navbar/Navber.ast
+o src/Components/Navbar/Navber.cmj src/Components/Navbar/Navber.cmi ../../src/Components/Navbar/Navber.bs.js : mij src/Components/Navbar/Navber.ast
+o src/App/_App.ast : astj ../../src/App/_App.res
+o src/App/_App.d : deps src/App/_App.ast src/App/_App.iast
+o src/App/_App.iast : astj ../../src/App/_App.resi
+rule mi
+  command = /Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/rescript/darwin/bsc.exe -I src/App -I src/Components/Navbar -I src/Components -I src/Layouts -I src/Pages/Home -I src/Pages -I src -I bindings/Next -I bindings/Storybook -I bindings/Cypress -I bindings -I /Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/@rescript/react/lib/ocaml   -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/App/_App.cmi : mi src/App/_App.iast
+rule mj
+  command = /Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/rescript/darwin/bsc.exe -bs-read-cmi -I src/App -I src/Components/Navbar -I src/Components -I src/Layouts -I src/Pages/Home -I src/Pages -I src -I bindings/Next -I bindings/Storybook -I bindings/Cypress -I bindings -I /Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/@rescript/react/lib/ocaml   -bs-package-name rescript-nextjs-cypress-storybook-template -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/App/_App.cmj ../../src/App/_App.bs.js : mj src/App/_App.ast src/App/_App.cmi
+o src/App/_Document.ast : astj ../../src/App/_Document.res
+o src/App/_Document.d : deps src/App/_Document.ast src/App/_Document.iast
+o src/App/_Document.iast : astj ../../src/App/_Document.resi
+o src/App/_Document.cmi : mi src/App/_Document.iast
+o src/App/_Document.cmj ../../src/App/_Document.bs.js : mj src/App/_Document.ast src/App/_Document.cmi

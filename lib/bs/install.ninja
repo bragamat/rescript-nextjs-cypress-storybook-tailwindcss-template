@@ -1,0 +1,42 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o Cypress.cmi : cp ../bs/bindings/Cypress/Cypress.cmi
+o Cypress.cmj : cp ../bs/bindings/Cypress/Cypress.cmj
+o Cypress.cmt : cp ../bs/bindings/Cypress/Cypress.cmt
+o Cypress.res : cp ../../bindings/Cypress/Cypress.res
+o Storybook.cmi : cp ../bs/bindings/Storybook/Storybook.cmi
+o Storybook.cmj : cp ../bs/bindings/Storybook/Storybook.cmj
+o Storybook.cmt : cp ../bs/bindings/Storybook/Storybook.cmt
+o Storybook.res : cp ../../bindings/Storybook/Storybook.res
+o Next.cmi : cp ../bs/bindings/Next/Next.cmi
+o Next.cmj : cp ../bs/bindings/Next/Next.cmj
+o Next.cmt : cp ../bs/bindings/Next/Next.cmt
+o Next.res : cp ../../bindings/Next/Next.res
+o Home.cmi : cp ../bs/src/Pages/Home/Home.cmi
+o Home.cmj : cp ../bs/src/Pages/Home/Home.cmj
+o Home.cmt : cp ../bs/src/Pages/Home/Home.cmt
+o Home.res : cp ../../src/Pages/Home/Home.res
+o Default.cmi : cp ../bs/src/Layouts/Default.cmi
+o Default.cmj : cp ../bs/src/Layouts/Default.cmj
+o Default.cmt : cp ../bs/src/Layouts/Default.cmt
+o Default.res : cp ../../src/Layouts/Default.res
+o Navber.cmi : cp ../bs/src/Components/Navbar/Navber.cmi
+o Navber.cmj : cp ../bs/src/Components/Navbar/Navber.cmj
+o Navber.cmt : cp ../bs/src/Components/Navbar/Navber.cmt
+o Navber.res : cp ../../src/Components/Navbar/Navber.res
+o _App.cmi : cp ../bs/src/App/_App.cmi
+o _App.cmj : cp ../bs/src/App/_App.cmj
+o _App.cmt : cp ../bs/src/App/_App.cmt
+o _App.res : cp ../../src/App/_App.res
+o _App.resi : cp ../../src/App/_App.resi
+o _App.cmti : cp ../bs/src/App/_App.cmti
+o _Document.cmi : cp ../bs/src/App/_Document.cmi
+o _Document.cmj : cp ../bs/src/App/_Document.cmj
+o _Document.cmt : cp ../bs/src/App/_Document.cmt
+o _Document.res : cp ../../src/App/_Document.res
+o _Document.resi : cp ../../src/App/_Document.resi
+o _Document.cmti : cp ../bs/src/App/_Document.cmti
+build install.stamp : touch Cypress.cmi Cypress.cmj Storybook.cmi Storybook.cmj Next.cmi Next.cmj Home.cmi Home.cmj Default.cmi Default.cmj Navber.cmi Navber.cmj _App.cmi _App.cmj _Document.cmi _Document.cmj 

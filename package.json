@@ -6,13 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "res": "rescript build -with-deps -w",
+    "res:build": "rescript build",
+    "res:clean": "rescript clean"
   },
   "dependencies": {
+    "@rescript/react": "^0.11.0",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "rescript": "^10.1.3"
   }
 }
