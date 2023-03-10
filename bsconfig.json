@@ -1,18 +1,24 @@
 {
   "name": "rescript-nextjs-cypress-storybook-template",
   "suffix": ".bs.js",
-  "jsx":{
+  "jsx": {
     "version": 4,
     "mode": "classic"
   },
-  "bs-dependencies": ["@rescript/react"],
+  "bs-dependencies": [
+    "@rescript/react"
+  ],
   "sources": [
+    {
+      "dir": "bindings",
+      "subdirs": true
+    },
     {
       "dir": "src",
       "subdirs": true
     },
     {
-      "dir": "bindings",
+      "dir": "cypress",
       "subdirs": true
     }
   ],
