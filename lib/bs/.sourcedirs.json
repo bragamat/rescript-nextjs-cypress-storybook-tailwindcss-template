@@ -1,1 +1,0 @@
-{ "dirs" : [ "bindings" , "bindings/Cypress" , "bindings/Storybook" , "bindings/Next" , "src" , "src/Pages" , "src/Pages/Home" , "src/Layouts" , "src/Components" , "src/Components/Navbar" , "src/App" ] , "pkgs" : [ [ "@rescript/react" , "/Users/mateusbraga/home/templates/rescript/cypress-storybook-tailwindcss-nextjs/node_modules/@rescript/react" ] ] , "generated" : [] }
