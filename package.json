@@ -12,7 +12,9 @@
     "res:clean": "rescript clean",
     "cy:open": "cypress open",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test:watch": "vitest",
+    "test": "vitest run"
   },
   "dependencies": {
     "@rescript/react": "^0.11.0",
@@ -34,11 +36,15 @@
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
+    "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^8.3.0",
     "cypress": "^12.7.0",
+    "jsdom": "^21.1.0",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
-    "tailwindcss": "^3.2.7"
+    "rescript-vitest": "^1.1.0",
+    "tailwindcss": "^3.2.7",
+    "vitest": "0.27.3"
   }
 }

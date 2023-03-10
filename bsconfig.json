@@ -6,8 +6,10 @@
     "mode": "classic"
   },
   "bs-dependencies": [
-    "@rescript/react"
+    "@rescript/react",
+    "rescript-vitest"
   ],
+  "bs-dev-dependencies": [ "rescript-vitest" ],
   "sources": [
     {
       "dir": "bindings",
@@ -15,10 +17,6 @@
     },
     {
       "dir": "src",
-      "subdirs": true
-    },
-    {
-      "dir": "stories",
       "subdirs": true
     },
     {
