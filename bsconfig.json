@@ -9,7 +9,9 @@
     "@rescript/react",
     "rescript-vitest"
   ],
-  "bs-dev-dependencies": [ "rescript-vitest" ],
+  "bs-dev-dependencies": [
+    "rescript-vitest"
+  ],
   "sources": [
     {
       "dir": "bindings",
