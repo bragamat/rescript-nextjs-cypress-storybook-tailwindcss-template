@@ -2,25 +2,9 @@ open Vitest
 open Expect
 open ReactTestingLibrary
 
-
-module DummyComponent = {
-  @react.component
-  let make = () => {
-    <div>
-      <label> {React.string("Choose a color")} </label>
-      <select>
-        <option> {React.string("Red")} </option>
-        <option> {React.string("Green")} </option>
-        <option onClick={_ => Js.log("Blue")}> {React.string("Blue")} </option>
-      </select>
-    </div>
-  }
-}
-
-
-describe("DummyComponent", () => {
-  beforeEach(() => {
-    <DummyComponent />->renderOnScreen
+describe("Button",_ => {
+  beforeEach(_ => {
+    <Button  label="Button"/> ->renderOnScreen
   })
 
   test("render Red option", _ => {
