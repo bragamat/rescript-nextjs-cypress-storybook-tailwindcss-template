@@ -1,18 +1,46 @@
 open Vitest
+open Expect
+open ReactTestingLibrary
 
-describe("Hello, Vitest", () => {
-  test("This is a test case", (_) => {
 
-    // Test using the `Expect` module
-    expect(1 + 2)->Expect.toBe(3)
+module DummyComponent = {
+  @react.component
+  let make = () => {
+    <div>
+      <label> {React.string("Choose a color")} </label>
+      <select>
+        <option> {React.string("Red")} </option>
+        <option> {React.string("Green")} </option>
+        <option onClick={_ => Js.log("Blue")}> {React.string("Blue")} </option>
+      </select>
+    </div>
+  }
+}
 
-    // There are some nested modules for specific type
-    expect([1, 2, 3])
-    ->Expect.Array.toContain(2)
 
-    expect("Hello, ReScript-Vitest!")
-    ->Expect.String.toContain("ReScript")
+describe("DummyComponent", () => {
+  beforeEach(() => {
+    <DummyComponent />->renderOnScreen
+  })
 
-  // You can specify timeout for a test suite
+  test("render Red option", _ => {
+    screen
+    ->getByRole(~matcher=#Str("option"), ~options=makeByRoleOptions(~name="Red", ()))
+    ->expect
+    ->toMatchSnapshot
+  })
+
+  test("render Green option",_ => {
+    screen
+    ->getByRole(~matcher=#Str("option"), ~options=makeByRoleOptions(~name="Green", ()))
+    ->expect
+    ->toMatchSnapshot
+  })
+
+  test("render Blue option", _ => {
+    screen
+    ->getByRole(~matcher=#Str("option"), ~options=makeByRoleOptions(~name="Blue", ()))
+    ->expect
+    ->toMatchSnapshot
   })
 })
