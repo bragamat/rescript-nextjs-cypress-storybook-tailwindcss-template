@@ -1,12 +1,12 @@
 # Rescript + Nextjs + Cypress + Storybook + Tailwdincss
 
 # Stack
-* Nextjs 
+* Nextjs
+* Vitest
 * Cypress
-* Storybook: (WIP)
-* Tailwdincss: (NOT YET)
-
-
+* Storybook
+* Tailwdincss
+* React Testing Library
 
 ## Getting Started
 
