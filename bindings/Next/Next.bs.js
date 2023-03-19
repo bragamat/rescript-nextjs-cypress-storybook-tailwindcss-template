@@ -22,32 +22,25 @@ var Router = {
   Events: Events
 };
 
-var Html = {};
-
-var Head = {};
-
-var Main = {};
-
-var NextScript = {};
-
-var $$Document = {
-  Html: Html,
-  Head: Head,
-  Main: Main,
-  NextScript: NextScript
-};
-
 var $$Error = {};
 
 var Dynamic = {};
 
+var $$Image;
+
+var Seo;
+
+var $$Document;
+
 export {
+  $$Image ,
+  Seo ,
+  $$Document ,
   GetServerSideProps ,
   GetStaticProps ,
   GetStaticPaths ,
   Link ,
   Router ,
-  $$Document ,
   $$Error ,
   Dynamic ,
 }

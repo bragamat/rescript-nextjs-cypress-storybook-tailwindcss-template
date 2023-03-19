@@ -7,11 +7,7 @@
   },
   "bs-dependencies": [
     "@rescript/react",
-    "rescript-vitest",
-    "rescript-react-testing-library"
-  ],
-  "bs-dev-dependencies": [
-    "rescript-dom-testing-library"
+    "rescript-vitest"
   ],
   "sources": [
     {

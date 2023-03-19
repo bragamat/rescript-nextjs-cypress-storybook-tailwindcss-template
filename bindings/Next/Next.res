@@ -1,3 +1,7 @@
+module Image = NextImage
+module Seo = NextSeo
+module Document = NextDocument
+
 module GetServerSideProps = {
   module Req = {
     type t
@@ -117,31 +121,6 @@ module Router = {
 
   @send external replace: (router, string) => unit = "replace"
   @send external replaceObj: (router, pathObj) => unit = "replace"
-}
-
-module Document = {
-// import { Html, Head, Main, NextScript } from 'next/document'
-  external default: () => React.element = "default"
-  module Html = {
-    @module("next/document") @react.component
-    external make: (~className: string=?, ~children: React.element) => React.element = "Html"
-  }
-
-  module Head = {
-    @module("next/document") @react.component
-    external make: (~children: option<React.element>=?) => React.element = "Head"
-  }
-
-  module Main = {
-    @module("next/document") @react.component
-    external make: () => React.element = "Main"
-  }
-
-  module NextScript= {
-    @module("next/document") @react.component
-    external make: () => React.element = "NextScript"
-  }
-
 }
 
 module Error = {
